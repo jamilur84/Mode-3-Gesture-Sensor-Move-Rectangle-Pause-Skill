@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MultiHexaLeapMotSkill - Mode 3</title>
+<script src="leap-1.0.0.js"></script>
+<script type="text/javascript" src="mind-framework.js"></script>
+<script src="hexa_leap_interface_rect_pause.js"></script>
+<script type="text/javascript">
+	
+	// Initialize the Hexa Mind robot
+	mind.init({
+		callback : hexa_cb
+	});
+	
+	// Assign the Leap Frame Handler to the Leap Loop function.
+	Leap.loop(leap_frame_hdlr);
+</script>
+</head>
+
+<body>
+	<h1>Multi-Hexa Leap-Motion Skill - Mode 3</h1>
+	<button id="start">Start</button>
+	<button id="stop">Stop</button><br>
+	<button id="gorectp_n">Walk Rectangle With Pause --</button>
+    <button id="gorectp_p">Walk Rectangle With Pause ++</button>
+	
+	<br />
+	<br /> Hexa Command: <div id="hexa_out"></div>
+	<br />
+
+	<div id="leap_header"><h2>Leap Sensor Data</h2></div>
+	<div id="leap_out"></div>
+	<br />
+	
+	<br />
+	<br /> Debug Message: 
+	<div id="dbg_msg"></div>
+	<br />
+	
+	
+	<script type="text/javascript">
+	
+	// Register some button action handler.
+	// This is for testing the robot movement manually.
+	reg_button_ev_hdl(document);
+	
+	</script>
+</body>
+</html>
